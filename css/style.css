@@ -1,3 +1,4 @@
+
 .header{
   margin-top:1em;
   margin-bottom: 3em;
@@ -11,4 +12,12 @@
   font-size: 48px;
   margin-top: 2px;
   color: white;
+}
+
+.fieldContainer {
+  background-color: #b2b7b5;
+}
+
+#regiserContainer {
+  background-color: #ffffff;
 }

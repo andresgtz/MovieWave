@@ -45,24 +45,59 @@
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                 <h4 class="modal-title">Log-in</h4>
               </div>
+
               <div class="modal-body">
-                <div class="form-group">
-          		<label for="exampleInputEmail1">Email address</label>
-          		<input class="form-control" id="exampleInputEmail1" placeholder="Enter email" type="email">
-        		  </div>
-      		  <div class="form-group">
-      		  	<label for="exampleInputPassword1">Password</label>
-      			<input class="form-control" id="exampleInputPassword1" placeholder="Password" type="password">
-      		  </div>
-                <p class="text-right"><a href="#">Forgot password?</a></p>
-              </div>
-              <div class="modal-footer">
-                <a href="#" data-dismiss="modal" class="btn">Close</a>
-                <a href="#" class="btn btn-primary">Log-in</a>
+                <div class="tabbable"> <!-- Only required for left/right tabs -->
+                      <ul class="nav nav-tabs">
+                        <li class="active"><a href="#tab1" data-toggle="tab">Login</a></li>
+                        <li><a href="#tab2" data-toggle="tab">Register</a></li>
+                      </ul>
+                      <div class="tab-content">
+
+                          <div class="tab-pane active" id="tab1">
+                            <div class="form-group">
+                              <label for="exampleInputEmail1">Email address</label>
+                              <input class="form-control" id="exampleInputEmail1" placeholder="Enter email" type="email">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Password</label>
+                                <input class="form-control" id="exampleInputPassword1" placeholder="Password" type="password">
+                            </div>
+                            <div class="modal-footer">
+                              <a href="#" data-dismiss="modal" class="btn">Close</a>
+                              <a href="#" class="btn btn-primary">Log-in</a>
+                            </div>
+                          </div>
+                          <div class="tab-pane" id="tab2">
+                            <div class="form-group">
+                              <label for="register-username-label">Username</label>
+                              <input class="form-control" id="register-username" placeholder="Enter username" type="text">
+                            </div>
+                            <div class="form-group">
+                              <label for="register-email-label">email</label>
+                              <input class="form-control" id="register-email-input" placeholder="Enter email" type="email">
+                            </div>
+                            <div class="form-group">
+                                <label for="register-password1-label">Password</label>
+                                <input class="form-control" id="register-password2" placeholder="Password" type="password">
+                            </div>
+                            <div class="form-group">
+                                <label for="register-password2-label">Confirm Password</label>
+                                <input class="form-control" id="register-password2" placeholder="Password" type="password">
+                            </div>
+                            <div class="modal-footer">
+                              <a href="#" data-dismiss="modal" class="btn">Close</a>
+                              <a href="#" class="btn btn-primary">Register</a>
+                            </div>
+                          </div>
+                      </div>
+                </div>
               </div>
             </div>
           </div>
       </div>
+
+
 
       <div class="row">
           <div>
