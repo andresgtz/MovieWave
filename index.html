@@ -5,6 +5,8 @@
     <meta http-equiv="Content-Type" content="text/html"  charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="./bootstrap/css/bootstrap.css"/>
     <link rel="stylesheet" type="text/css" href="./css/style.css"/>
+    <script type="text/javascript" src="bootstrap/js/jquery-3.1.0.min.js" > </script>
+    <script type="text/javascript" src="bootstrap/js/bootstrap.js" > </script>
   </head>
 
   <body>
@@ -17,16 +19,57 @@
             <img class="pull-left" src="images/logo.png" width="58" height="49">
             <a class="navbar-brand" href="#">MovieWave</a>
           </div>
+
           <ul class="nav navbar-nav">
             <li class="active"><a href="#">Home</a></li>
-            <li><a href="#">Page 1</a></li>
-            <li><a href="#">Page 2</a></li>
-            <li><a href="#">Page 3</a></li>
+            <li><a href="#">Genres</a></li>
+            <li><a href="#">Top Movies</a></li>
+            <li><a href="#">About us</a></li>
           </ul>
+        <form class="navbar-form navbar-left">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Search">
+          </div>
+          <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#myModal" data-toggle="modal" data-target="#myModal">Log-in</a></li>
+        </ul>
         </div>
       </nav>
 
+      <div class="modal fade" id="myModal">
+      	<div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title">Log-in</h4>
+              </div>
+              <div class="modal-body">
+                <div class="form-group">
+          		<label for="exampleInputEmail1">Email address</label>
+          		<input class="form-control" id="exampleInputEmail1" placeholder="Enter email" type="email">
+        		  </div>
+      		  <div class="form-group">
+      		  	<label for="exampleInputPassword1">Password</label>
+      			<input class="form-control" id="exampleInputPassword1" placeholder="Password" type="password">
+      		  </div>
+                <p class="text-right"><a href="#">Forgot password?</a></p>
+              </div>
+              <div class="modal-footer">
+                <a href="#" data-dismiss="modal" class="btn">Close</a>
+                <a href="#" class="btn btn-primary">Log-in</a>
+              </div>
+            </div>
+          </div>
+      </div>
 
+      <div class="row">
+          <div>
+            <h1>MovieWave</h1>
+          </div>
+      </div>
+</div>
   </body>
 
 </hmtl>
