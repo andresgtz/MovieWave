@@ -21,3 +21,12 @@
 #regiserContainer {
   background-color: #ffffff;
 }
+
+.navbar {
+  padding-left: 50px;
+  padding-right: 150px;
+}
+
+body {
+  background: url(../images/welcome.jpg);
+}
