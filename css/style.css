@@ -30,3 +30,19 @@
 body {
   background: url(../images/welcome.jpg);
 }
+
+.welcomeHeader{
+  text-align: center;
+
+  font-family: 'Ruda', sans-serif;
+  color: white;
+  margin-top: 170px;
+}
+
+.welcomeHeader h1{
+  font-size: 80px !important;
+}
+
+.welcomeHeader h2{
+  font-size: 35px !important;
+}
