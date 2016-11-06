@@ -5,14 +5,14 @@ CREATE TABLE users (
   username VARCHAR(20) NOT NULL,
   email VARCHAR(100) NOT NULL,
   pass VARCHAR(20) NOT NULL,
-  aboutme VARCHAR,
+  aboutme VARCHAR(3000) NULL,
   PRIMARY KEY(username)
 );
 
 CREATE TABLE movies (
 	id INT NOT NULL AUTO_INCREMENT,
-	name VARCHAR(30) NOT NULL,
-	year YEAR NOT NULL,
+	movieName VARCHAR(30) NOT NULL,
+	movieYear YEAR NOT NULL,
 	genre VARCHAR(30) NOT NULL,
 	description VARCHAR(250) NOT NULL,
 	PRIMARY KEY(id)
@@ -21,7 +21,7 @@ CREATE TABLE movies (
 CREATE TABLE comments (
 	id INT NOT NULL AUTO_INCREMENT,
 	rate INT NOT NULL,
-	comment VARCHAR(250) NULL,
+	content VARCHAR(250) NULL,
 	username VARCHAR(20) NOT NULL,
 	movie_id INT NOT NULL,
 	PRIMARY KEY(id),
