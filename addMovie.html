@@ -105,6 +105,14 @@
         <div class="well">
           <div class="addMovie">
             <h1>Add a movie</h1>
+            <div id="succesMsg" class="alert alert-success fade in">
+              <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+              Movie succesfully added!
+            </div>
+            <div id="errorMsg" class="alert alert-danger fade in">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                Please fill in every input!
+            </div>
               <form>
                   <div class="form-group">
                       <label for="movieTitle" >Movie Title</label>
@@ -120,7 +128,7 @@
                     <input required="true" class="form-control" type="text" id="movieActors"></input>
                   </div>
                   <div class="form-group">
-                    <label for="movieGenre">Actors</label>
+                    <label for="movieGenre">Genre</label>
                     <input required="true" class="form-control" type="text" id="movieGenre"></input>
                   </div>
                   <div class="form-group">
