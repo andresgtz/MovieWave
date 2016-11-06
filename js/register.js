@@ -1,4 +1,9 @@
 $(document).ready(function() {
+	$("#successMsg").hide()
+	$("#passwordErrorMsg").hide()
+	$("#invalidMailMsg").hide()
+	$("#usernameInvalidMsg").hide()
+	$("#errorAddedMsg").hide()
     $("#register-button").on("click", function() {
         var jsonObject = {
             "username": $("#register-username").val(),
@@ -7,7 +12,6 @@ $(document).ready(function() {
             "userEmail": $("#register-email-input").val(),
             "action": "REGISTER"
         };
-        console.log(jsonObject)
         var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
 
         if (jsonObject.username != '') {
@@ -20,20 +24,40 @@ $(document).ready(function() {
                         dataType: "json",
                         contentType: "application/x-www-form-urlencoded",
                         success: function(jsonData) {
-                            alert(jsonData);
+                            $("#successMsg").show()
+							$("#passwordErrorMsg").hide()
+							$("#invalidMailMsg").hide()
+							$("#usernameInvalidMsg").hide()
+							$("#errorAddedMsg").hide()
                         },
                         error: function(errorMsg) {
-                            alert(errorMsg.statusText);
+                            $("#errorAddedMsg").show()
+                            $("#successMsg").hide()
+							$("#passwordErrorMsg").hide()
+							$("#invalidMailMsg").hide()
+							$("#usernameInvalidMsg").hide()
                         }
                     });
                 } else {
-                    alert("The passwords do not match.")
+                    $("#passwordErrorMsg").show()
+                    $("#successMsg").hide()
+					$("#invalidMailMsg").hide()
+					$("#usernameInvalidMsg").hide()
+					$("#errorAddedMsg").hide()
                 }
             } else {
-                alert("The email is not valid.")
+                $("#invalidMailMsg").show()
+                $("#successMsg").hide()
+				$("#passwordErrorMsg").hide()
+				$("#usernameInvalidMsg").hide()
+				$("#errorAddedMsg").hide()
             }
         } else {
-            alert("The usarname is not valid.")
+            $("#usernameInvalidMsg").show()
+            $("#successMsg").hide()
+			$("#passwordErrorMsg").hide()
+			$("#invalidMailMsg").hide()
+			$("#errorAddedMsg").hide()
         }
     })
 });

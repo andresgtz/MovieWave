@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css?family=Ruda" rel="stylesheet">
     <script type="text/javascript" src="bootstrap/js/jquery-3.1.0.min.js" > </script>
     <script type="text/javascript" src="bootstrap/js/bootstrap.js" > </script>
+    <script type="text/javascript" src="js/register.js"> </script>
   </head>
 
   <body>
@@ -71,6 +72,26 @@
                             </div>
                           </div>
                           <div class="tab-pane" id="tab2">
+                          <div id="successMsg" class="alert alert-success fade in">
+                              <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                              User succesfully added!
+                            </div>
+                            <div id="passwordErrorMsg" class="alert alert-danger fade in">
+                              <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                              The passwords do not match!
+                            </div>
+                            <div id="invalidMailMsg" class="alert alert-danger fade in">
+                              <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                              The provided email is not valid!
+                            </div>
+                            <div id="usernameInvalidMsg" class="alert alert-danger fade in">
+                              <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                              The provided user is not valid!
+                            </div>
+                            <div id="errorAddedMsg" class="alert alert-danger fade in">
+                              <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                              The user could not be added!
+                            </div>
                             <div class="form-group">
                               <label for="register-username-label">Username</label>
                               <input class="form-control" id="register-username" placeholder="Enter username" type="text">
