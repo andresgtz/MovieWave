@@ -5,6 +5,7 @@ CREATE TABLE users (
   username VARCHAR(20) NOT NULL,
   email VARCHAR(100) NOT NULL,
   pass VARCHAR(20) NOT NULL,
+  aboutme VARCHAR,
   PRIMARY KEY(username)
 );
 
