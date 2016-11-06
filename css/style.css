@@ -37,3 +37,14 @@
   font-size: 35px !important;
   color: black;
 }
+
+.top-movies{
+  font-family: 'Ruda', sans-serif;
+  margin-top: 2em;
+  margin-left: 2em;
+
+}
+
+.top-movies h1{
+  font-family: 'Ruda', sans-serif;
+}
