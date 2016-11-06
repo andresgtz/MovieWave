@@ -48,3 +48,35 @@
 .top-movies h1{
   font-family: 'Ruda', sans-serif;
 }
+
+.labelAboutMe {
+  font-family: 'Ruda', sans-serif;
+  font-size: 25px;
+}
+
+.divAboutMe {
+  margin-top: 1.6em;
+}
+
+.buttonAboutMe {
+    margin-top: 8px;
+    margin-left: 2px;
+    display: inline-block;
+    vertical-align: top;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.showTextAboutMe {
+  resize: none;
+  width: 600px;
+  height: 150px;
+}
+
+.favoriteMovies {
+  margin-left: 15px;
+}
+
+.allAboutMe {
+  margin-left: 100px;
+}
