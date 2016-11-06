@@ -1,8 +1,8 @@
 <?php
 function connectionToDataBase(){
 		$servername = "localhost";
-		$username = "root";
-		$password = "root";
+		$username = "andy";
+		$password = "";
 		$dbname = "moviewave";
 
 
