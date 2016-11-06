@@ -30,10 +30,8 @@ $(document).ready(function(){
                 "movieActors": $("#movieActors").val(),
                 "movieGenre": $("#movieGenre").val(),
                 "movieDescription": $("#movieDescription").val(),
-                "action" : "addMovie"
+                "action" : "ADDMOVIE"
             };
-
-            console.log(jsonObject);
 
             $.ajax({
                 type: "POST",
