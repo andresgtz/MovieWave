@@ -15,6 +15,7 @@
       break;
     case 'CHECKSESSION': checkSessionFunction();
       break;
+		case 'LOGOUT': logoutFunction();
 		default:
 			break;
 	}
@@ -43,9 +44,9 @@
 
     if($result['status'] == 'SUCCESS'){
       echo json_encode(array('message' => 'Login Succesful'));
+
     }else{
-      header('HTTP/1.1 420 '. $result['status']);
-      die($result['status']);
+      echo json_encode(array('message' => 'ERROR'));
     }
   }
 
@@ -92,6 +93,12 @@
     }
   }
 
+	function logoutFunction(){
+		session_start();
+		session_unset();
+		session_destroy();
 
+		echo json_encode(array('message'=>'LOGOUT SUCCESS'));
+	}
 
  ?>

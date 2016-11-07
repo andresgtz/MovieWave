@@ -27,6 +27,12 @@ $(document).ready(function(){
                 contentType: "application/x-www-form-urlencoded",
                 success: function(jsonData) {
                     //alert(jsonData);
+                    if(jsonData['message'] == "SUCCESS"){
+                      location.reload();
+                    }else{
+                      $("#logBlankField").hide();
+                      $("#logPasswordErrorMsg").show();
+                    }
 
 
                 },

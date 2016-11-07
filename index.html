@@ -10,6 +10,8 @@
     <script type="text/javascript" src="bootstrap/js/bootstrap.js" > </script>
     <script type="text/javascript" src="js/register.js"> </script>
     <script type="text/javascript" src="js/login.js"> </script>
+    <script type="text/javascript" src="js/logout.js"> </script>
+
       <script type="text/javascript" src="js/checkSession.js"> </script>
   </head>
 
@@ -41,7 +43,7 @@
         <ul class="nav navbar-nav navbar-right">
           <li><a id="loginLink" href="#myModal" data-toggle="modal" data-target="#myModal">Log-in</a></li>
           <li><a id="userLink" href="profile.html"> </a></li>
-          <li><a id="logoutLink" href="profile.html">Logout</a></li>
+          <li><a id="logoutLink" href="#">Logout</a></li>
         </ul>
         </div>
       </nav>
@@ -83,7 +85,7 @@
                             </div>
                             <div class="modal-footer">
                               <a href="#" data-dismiss="modal" class="btn">Close</a>
-                              <a href="#" class="btn btn-primary">Log-in</a>
+                              <a id="loginButton" href="#" class="btn btn-primary">Log-in</a>
                             </div>
                           </div>
                           <div class="tab-pane" id="tab2">
