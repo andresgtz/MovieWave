@@ -15,11 +15,17 @@ $(document).ready(function(){
           //alert(jsonData);
           if(jsonData['username'] != ""){
             //alert(jsonData['username']);
+<<<<<<< HEAD
             $('#addMovieli').show();
           }
           else {
             //alert("session not started");
             $('#addMovieli').hide();
+=======
+          }
+          else {
+            //alert("session not started");
+>>>>>>> 5de505f8fc52d5dd3e2c6e61ad88bba934cb78d7
           }
       },
       error: function(errorMsg) {

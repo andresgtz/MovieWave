@@ -1,8 +1,8 @@
 
 $(document).ready(function(){
   //hide error msg and success msg
-  $("#errorMsg").hide();
-  $("#successMsg").hide();
+  $("#movie-errorMsg").hide();
+  $("#movie-successMsg").hide();
 
   //populate year select
   var opt = '';
@@ -41,8 +41,8 @@ $(document).ready(function(){
                 contentType: "application/x-www-form-urlencoded",
                 success: function(jsonData) {
                     //alert(jsonData);
-                    $("#errorMsg").hide();
-                    $("#successMsg").show();
+                    $("#movie-errorMsg").hide();
+                    $("#movie-successMsg").show();
 
                 },
                 error: function(errorMsg) {
@@ -51,8 +51,8 @@ $(document).ready(function(){
             });
 
     }else{
-      $("#successMsg").hide();
-      $("#errorMsg").show();
+      $("#movie-successMsg").hide();
+      $("#movie-errorMsg").show();
 
     }
   });
