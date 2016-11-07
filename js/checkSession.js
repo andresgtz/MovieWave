@@ -14,7 +14,7 @@ $(document).ready(function(){
       success: function(jsonData) {
           //alert(jsonData);
           if(jsonData['username'] != ""){
-            //alert(jsonData['username']);
+            alert(jsonData['username']);
             $('#addMovieli').show();
           }
           else {
