@@ -42,7 +42,7 @@
 
 
     if($result['status'] === 'SUCCESS'){
-       echo json_encode(array('message' => 'Registration succesful'));
+       echo json_encode(array('message' => 'Movie added succesfully.'));
     }else {
       header('HTTP/1.1 500 ' . $result['status']);
       die($result['status']);
