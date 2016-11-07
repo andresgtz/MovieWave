@@ -42,7 +42,7 @@
 			$sql = "SELECT * FROM users WHERE username = '$userName' and pass = '$password'";
 			$result = $conn->query($sql);
 
-			if($result->num_rows > 0){
+			if($result -> num_rows > 0){
 				//start session
 				session_start();
 				session_destroy();

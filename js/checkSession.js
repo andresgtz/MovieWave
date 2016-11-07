@@ -17,10 +17,11 @@ $(document).ready(function(){
           //alert(jsonData);
           if(jsonData['username'] != ""){
             //alert(jsonData['username']);
+            $("#userLink").append("Welcome, " + jsonData['username']);
             $("#addMovieli").show();
             $("#logoutLink").show();
             $("#userLink").show();
-            $("#loginLink").show();
+            $("#loginLink").hide();
           }
           else {
             $("#addMovieli").hide();
