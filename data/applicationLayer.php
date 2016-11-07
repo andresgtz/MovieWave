@@ -16,6 +16,7 @@
     case 'CHECKSESSION': checkSessionFunction();
       break;
 
+		case 'LOGOUT': logoutFunction();
 		default:
 			break;
 	}
@@ -43,10 +44,9 @@
     $result = attemptLogin($userName,$password);
 
     if($result['status'] === 'SUCCESS'){
-      echo json_encode(array('message' => 'Login Succesful'));
+      echo json_encode(array('message' => 'SUCCESS'));
     }else{
-      header('HTTP/1.1 420 '. $result['status']);
-      die($result['status']);
+      echo json_encode(array('message' => 'ERROR'));
     }
   }
 
@@ -77,6 +77,12 @@
     }
   }
 
+	function logoutFunction(){
+		session_start();
+		session_unset();
+		session_destroy();
 
+		echo json_encode(array('message'=>'LOGOUT SUCCESS'));
+	}
 
  ?>
