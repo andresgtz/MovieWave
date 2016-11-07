@@ -1,6 +1,8 @@
 
 $(document).ready(function(){
-  $('#addMovieli').hide();
+  $("#addMovieli").hide();
+  $("#logoutLink").hide();
+  $("#userLink").hide();
   var jsonObject = {
       "action" : "CHECKSESSION"
   };
@@ -14,12 +16,17 @@ $(document).ready(function(){
       success: function(jsonData) {
           //alert(jsonData);
           if(jsonData['username'] != ""){
-            alert(jsonData['username']);
-            $('#addMovieli').show();
+            //alert(jsonData['username']);
+            $("#addMovieli").show();
+            $("#logoutLink").show();
+            $("#userLink").show();
+            $("#loginLink").show();
           }
           else {
-            alert("session not started");
-            $('#addMovieli').hide();
+            $("#addMovieli").hide();
+            $("#logoutLink").hide();
+            $("#userLink").hide();
+            $("#loginLink").show();
           }
 
       },
