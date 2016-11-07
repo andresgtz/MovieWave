@@ -8,12 +8,12 @@
 		case 'REGISTER': registerFunction();
 			break;
 
-    case: 'LOGIN': loginFunction();
+    case 'LOGIN': loginFunction();
       break;
     case 'ADDMOVIE': addMovieFunction();
       break;
 
-    case: 'CHECKSESSION': checkSessionFunction();
+    case 'CHECKSESSION': checkSessionFunction();
       break;
 
 		default:
