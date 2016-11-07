@@ -15,6 +15,7 @@
       break;
     case 'CHECKSESSION': checkSessionFunction();
       break;
+		case 'UPDATEGENRE': updateGenreFunction();
 		case 'LOGOUT': logoutFunction();
 		default:
 			break;
@@ -91,6 +92,13 @@
       echo json_encode(array('username'=> ""));
     }
   }
+
+	function updateGenreFunction(){
+		$result = attemptUpdateGenre();
+
+		//error_log(print_r($result,true));
+		echo json_encode($result);
+	}
 
 	function logoutFunction(){
 		session_start();

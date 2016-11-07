@@ -112,4 +112,28 @@
 		}
 	}
 
+	//attemptUpdateGenre
+	function attemptUpdateGenre(){
+		$conn = connectionToDataBase();
+
+
+		if($conn != null){
+			$sql = "SELECT DISTINCT genre FROM movies";
+			$result = $conn->query($sql);
+			$arr = array();
+			while($row=mysqli_fetch_array($result)){
+				error_log(print_r($row[0],true));
+				array_push($arr,$row[0]);
+
+			}
+
+			return $arr;
+
+		}else{
+
+			$conn -> close();
+			return array('status' => 'CONNECTION WITH DB WENT WRONG');
+		}
+	}
+
  ?>
