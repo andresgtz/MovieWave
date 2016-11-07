@@ -43,7 +43,7 @@
     $result = attemptLogin($userName,$password);
 
     if($result['status'] == 'SUCCESS'){
-      echo json_encode(array('message' => 'Login Succesful'));
+      echo json_encode(array('message' => 'SUCCESS'));
 
     }else{
       echo json_encode(array('message' => 'ERROR'));
