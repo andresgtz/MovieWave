@@ -1,7 +1,8 @@
 $(document).ready(function(){
 	$('#saveAboutMe').on("click", function(e) {
+
 		var jsonObject = {
-                "aboutMe" : $("#editAboutMe").val(),
+                "aboutMe" : $("#editAbout").val(),
                 "action" : "ABOUTME"
             };
 

@@ -71,7 +71,7 @@
 
 			if($result -> num_rows > 0){
 				$sql = "UPDATE users SET aboutme='$aboutMe' WHERE username='$userName'";
-
+				$result = $conn->query($sql);
 				$conn->close();
 				return array('status' => 'SUCCESS');
 			}else{
