@@ -8,7 +8,12 @@
 		case 'REGISTER': registerFunction();
 			break;
 
+    case: 'LOGIN': loginFunction();
+      break;
     case 'ADDMOVIE': addMovieFunction();
+      break;
+
+    case: 'CHECKSESSION': checkSessionFunction();
       break;
 
 		default:
@@ -31,6 +36,20 @@
 		}
 	}
 
+  function loginFunction(){
+    $userName = $_POST["loginUsername"];
+    $password = $_POST["loginPassword"];
+
+    $result = attemptLogin($userName,$password);
+
+    if($result['status'] === 'SUCCESS'){
+      echo json_encode(array('message' => 'Login Succesful'));
+    }else{
+      header('HTTP/1.1 420 '. $result['status']);
+      die($result['status']);
+    }
+  }
+
   function addMovieFunction(){
     $movieTitle = $_POST['movieTitle'];
     $movieYear = $_POST['movieYear'];
@@ -49,6 +68,15 @@
     }
   }
 
-  
+  function checkSessionFunction(){
+    session_start();
+    if(isset($_SESSION['username'])){
+      echo json_encode(array('username'=> $_SESSION['username']));
+    }else{
+      echo json_encode(array('username'=> ""));
+    }
+  }
+
+
 
  ?>

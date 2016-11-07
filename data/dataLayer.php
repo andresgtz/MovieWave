@@ -34,6 +34,34 @@
 
 	}
 
+	//attemptLogin
+	function attemptLogin($userName, $password){
+		$conn = connectionToDataBase();
+
+		if($conn != null){
+			$sql = "SELECT username, pass FROM users WHERE username= '$userName' and pass == '$password'";
+			$result = $conn->query($sql);
+
+			if($result->num_rows > 0){
+				//start session
+				session_start();
+				session_destroy();
+				session_start();
+
+				$_SESSION['username'] = $userName;
+
+				$conn->close();
+				return array('status' => 'SUCCESS');
+			}else{
+				$conn->close();
+				return array('status'=>'LOGIN UNSUCCESFUL');
+			}
+		}else{
+			$conn -> close();
+			return array('status' => 'CONNECTION WITH DB WENT WRONG');
+		}
+	}
+
 	//attemptAddMovie
 	function attemptAddMovie($movieTitle,$movieYear,$movieActors,$movieGenre,$movieDescription){
 		$conn =connectionToDataBase();
@@ -56,6 +84,9 @@
 					return array('status' => 'COULD NOT INSERT MOVIE.' );
 				}
 			}
+		}else{
+			$conn -> close();
+			return array('status' => 'CONNECTION WITH DB WENT WRONG');
 		}
 	}
 
