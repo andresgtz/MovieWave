@@ -33,7 +33,7 @@ $(document).ready(function(){
                 error: function(errorMsg) {
                   //alert(errorMsg.statusText);
                   $("#logBlankField").hide();
-                  ("#logPasswordErrorMsg").show();
+                  $("#logPasswordErrorMsg").show();
                 }
             });
 

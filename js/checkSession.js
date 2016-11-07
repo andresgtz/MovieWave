@@ -1,6 +1,6 @@
 
 $(document).ready(function(){
-
+  $('#addMovieli').hide();
   var jsonObject = {
       "action" : "CHECKSESSION"
   };
@@ -14,14 +14,16 @@ $(document).ready(function(){
       success: function(jsonData) {
           //alert(jsonData);
           if(jsonData['username'] != ""){
-            alert(jsonData['username']);
+            //alert(jsonData['username']);
+            $('#addMovieli').show();
           }
           else {
-            alert("session not started");
+            //alert("session not started");
+            $('#addMovieli').hide();
           }
       },
       error: function(errorMsg) {
-          alert(errorMsg.statusText);
+          //alert(errorMsg.statusText);
       }
   });
 
