@@ -50,11 +50,10 @@
     }
   }
 
-  function aboutMe(){
+  function aboutMeFunction(){
     session_start();
     $userName = $_SESSION["username"];
     $aboutMe = $_POST["aboutMe"];
-
     $result = attemptUpdateAboutMe($userName,$aboutMe);
 
     if($result['status'] == 'SUCCESS'){
