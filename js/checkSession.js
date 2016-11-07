@@ -14,10 +14,10 @@ $(document).ready(function(){
       success: function(jsonData) {
           //alert(jsonData);
           if(jsonData['username'] != ""){
-            alert(jsonData['username']);
+            //alert(jsonData['username']);
           }
           else {
-            alert("session not started");
+            //alert("session not started");
           }
       },
       error: function(errorMsg) {
