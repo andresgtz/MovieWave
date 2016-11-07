@@ -96,7 +96,7 @@
 				$conn -> close();
 				return array('status' => 'MOVIE ALREADY EXISTS.');
 			}else{
-				$sql = "INSERT INTO users (movieName, movieYear, genre, description) VALUES ('$movieTitle', '$movieYear', '$movieActors', '$movieGenre', '$movieDescription')";
+				$sql = "INSERT INTO movies(movieName, movieYear, actors, genre, description) VALUES ('$movieTitle', '$movieYear', '$movieActors', '$movieGenre', '$movieDescription')";
 
 				if (mysqli_query($conn, $sql)){
 					$conn -> close();

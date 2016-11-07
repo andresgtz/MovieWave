@@ -14,6 +14,7 @@ CREATE TABLE movies (
 	movieName VARCHAR(30) NOT NULL,
 	movieYear YEAR NOT NULL,
 	genre VARCHAR(30) NOT NULL,
+	actors VARCHAR(250) NOT NULL,
 	description VARCHAR(250) NOT NULL,
 	PRIMARY KEY(id)
 );
