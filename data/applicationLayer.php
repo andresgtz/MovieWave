@@ -7,15 +7,14 @@
 	switch ($action) {
 		case 'REGISTER': registerFunction();
 			break;
-
     case 'LOGIN': loginFunction();
+      break;
+    case 'ABOUTME': aboutMeFunction();
       break;
     case 'ADDMOVIE': addMovieFunction();
       break;
-
     case 'CHECKSESSION': checkSessionFunction();
       break;
-
 		default:
 			break;
 	}
@@ -27,7 +26,7 @@
 
 		$result = attemptRegistration($userName, $userEmail, $userPassword);
 
-		if($result['status'] === 'SUCCESS'){
+		if($result['status'] == 'SUCCESS'){
 			echo json_encode(array('message' => 'Registration successful' ));
 		}
 		else{
@@ -42,12 +41,28 @@
 
     $result = attemptLogin($userName,$password);
 
-    if($result['status'] === 'SUCCESS'){
+    if($result['status'] == 'SUCCESS'){
       echo json_encode(array('message' => 'Login Succesful'));
     }else{
       header('HTTP/1.1 420 '. $result['status']);
       die($result['status']);
     }
+  }
+
+  function aboutMe(){
+    session_start();
+    $userName = $_SESSION["username"];
+    $aboutMe = $_POST["aboutMe"];
+
+    $result = attemptUpdateAboutMe($userName,$aboutMe);
+
+    if($result['status'] == 'SUCCESS'){
+      echo json_encode(array('message' => 'Edit ABOUTME Succesful'));
+    }else{
+      header('HTTP/1.1 421 '. $result['status']);
+      die($result['status']);
+    }
+
   }
 
   function addMovieFunction(){
@@ -60,7 +75,7 @@
     $result = attemptAddMovie($movieTitle,$movieYear,$movieActors,$movieGenre,$movieDescription);
 
 
-    if($result['status'] === 'SUCCESS'){
+    if($result['status'] == 'SUCCESS'){
        echo json_encode(array('message' => 'Movie added succesfully.'));
     }else {
       header('HTTP/1.1 500 ' . $result['status']);
