@@ -39,7 +39,7 @@
 		$conn = connectionToDataBase();
 
 		if($conn != null){
-			$sql = "SELECT username, pass FROM users WHERE username= '$userName' and pass == '$password'";
+			$sql = "SELECT * FROM users WHERE username = '$userName' and pass = '$password'";
 			$result = $conn->query($sql);
 
 			if($result->num_rows > 0){
