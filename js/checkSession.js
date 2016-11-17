@@ -22,12 +22,16 @@ $(document).ready(function(){
             $("#logoutLink").show();
             $("#userLink").show();
             $("#loginLink").hide();
+            $("#comments").show();
+            $("#noLoginMsg").hide();
           }
           else {
             $("#addMovieli").hide();
             $("#logoutLink").hide();
             $("#userLink").hide();
             $("#loginLink").show();
+            $("#comments").hide();
+            $("#noLoginMsg").show();
           }
 
       },
