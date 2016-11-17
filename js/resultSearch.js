@@ -23,7 +23,7 @@ $(document).ready(function(){
           error: function(errorMsg) {
               //alert(errorMsg.statusText);
               alert("Error in result page.");
-              console.log("valio verga")
+          
           }
       });
   });
