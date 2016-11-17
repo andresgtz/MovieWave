@@ -40,7 +40,12 @@ $(document).ready(function(){
         dataType: "json",
         contentType: "application/x-www-form-urlencoded",
         success: function(jsonData) {
-          alert("Added to favorite");
+          if(jsonData["status"] == "SUCCESS"){
+            alert("Added to favorite");
+          }else{
+            alert("Movie not added to favorites.")
+          }
+
         },
         error: function(errorMsg) {
             //alert(errorMsg.statusText);
