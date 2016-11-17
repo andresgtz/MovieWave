@@ -17,7 +17,7 @@
       break;
 		case 'UPDATEGENRE': updateGenreFunction();
 			break;
-		case 'GETRESULT' : getResult();
+		case 'GETRESULTGENRE' : getResultGenre();
 			break;
 		case 'LOGOUT': logoutFunction();
 		default:
@@ -66,6 +66,19 @@
       header('HTTP/1.1 421 '. $result['status']);
       die($result['status']);
     }
+  }
+
+  function getResultGenre(){
+    $genre = $_POST["genre"];
+
+    $result = attemptGetMoviesByGenre($genre);
+    if(empty($result)){
+      header('HTTP/1.1 421 FAILED TO GET MOVIES');
+      die('ERROR RETRIEVING MOVIES.');
+    } else{
+      echo json_encode($result);
+    }
+
 
   }
 

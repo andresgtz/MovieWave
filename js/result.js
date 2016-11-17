@@ -1,6 +1,6 @@
 $(document).ready(function(){
   var jsonObject = {
-      "action" : "GETRESULT",
+      "action" : "GETRESULTGENRE",
       "genre" : $("#resultHeader").text()
   };
 
@@ -11,7 +11,7 @@ $(document).ready(function(){
       dataType: "json",
       contentType: "application/x-www-form-urlencoded",
       success: function(jsonData) {
-          //alert(jsonData);
+          alert(jsonData);
 
 
       },

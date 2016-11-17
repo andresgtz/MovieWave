@@ -34,6 +34,24 @@
 
 	}
 
+	function attemptGetMoviesByGenre($genre){
+		$conn = connectionToDataBase();
+		
+		if($conn != null){
+			$sql = "SELECT movieName, movieYear FROM movies WHERE genre = 'genre'";
+			$result = $conn->query($sql);
+			$arr = array();
+			while($row=mysqli_fetch_array($result)){
+				array_push($arr,$row[0]);
+			}
+			return $arr;
+		}else{
+			$conn -> close();
+			return array('status' => 'CONNECTION WITH DB WENT WRONG');
+		}
+
+	}
+
 	//attemptLogin
 	function attemptLogin($userName, $password){
 		$conn = connectionToDataBase();
