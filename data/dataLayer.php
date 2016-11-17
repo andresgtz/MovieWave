@@ -227,7 +227,7 @@
 			 	$arr =$row;
 			}
 
-			$sql = "SELECT AVG(rate) FROM comments WHERE id = '$id'";
+			$sql = "SELECT AVG(rate) FROM comments WHERE movie_id = '$id'";
 			//$sql = "SELECT AVG(id) FROM movies";
 			$result = $conn->query($sql);
 			$row = mysqli_fetch_array($result);
