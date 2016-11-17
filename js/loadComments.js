@@ -18,6 +18,7 @@ $(document).ready(function(){
       },
       error: function(errorMsg) {
           //alert(errorMsg.statusText);
-          alert("Error loading comments.");      }
+          //alert("Error loading comments.");      
+      }
   });
 });
