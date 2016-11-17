@@ -13,6 +13,7 @@
       <script type="text/javascript" src="js/logout.js"> </script>
       <script type="text/javascript" src="js/movieProfile.js"> </script>
       <script type="text/javascript" src="js/movieComment.js"> </script>
+      <script type="text/javascript" src="js/resultSearch.js"> </script>
 
    </head>
    <body>
