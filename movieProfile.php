@@ -15,6 +15,8 @@
       <script type="text/javascript" src="js/addComment.js"> </script>
       <script type="text/javascript" src="js/movieComment.js"> </script>
       <script type="text/javascript" src="js/resultSearch.js"> </script>
+      <script type="text/javascript" src="js/loadComments.js"> </script>
+
    </head>
    <body>
       <div class="genres">

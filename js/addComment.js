@@ -16,7 +16,8 @@ $(document).ready(function(){
       dataType: "json",
       contentType: "application/x-www-form-urlencoded",
       success: function(jsonData) {
-        alert("Comment Added Succesfully.")
+        alert("Comment added successfully.")
+        location.reload();
       },
       error: function(errorMsg) {
           //alert(errorMsg.statusText);

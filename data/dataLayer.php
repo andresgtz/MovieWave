@@ -54,6 +54,32 @@
 		}
 	}
 
+	function attemptLoadComments($movie){
+		$conn = connectionToDataBase();
+
+		if($conn != null){
+				$sql = "SELECT id FROM movies WHERE movieName = '$movie'";
+				$result = $conn->query($sql);
+				$row=mysqli_fetch_array($result);
+				$movieId = $row[0];
+				$sql = "SELECT rate, content, username FROM comments WHERE movie_id = '$movieId'";
+
+				$result = $conn->query($sql);
+       			$resultArray = array();
+       			$i = 0;
+        		if ($result->num_rows > 0) {
+            		while ($row = $result->fetch_assoc()) {
+                		$resultArray[$i] = $row;
+                		$i +=1;
+            	}
+        	}
+        	return ($resultArray);
+  		}else{
+			$conn -> close();
+			return array('status' => 'CONNECTION WITH DB WENT WRONG');
+		}
+	}
+
 	function attemptGetMoviesByGenre($genre){
 		$conn = connectionToDataBase();
 

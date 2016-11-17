@@ -15,6 +15,8 @@
       break;
     case 'ADDCOMMENT': addCommentFunction();
       break;
+    case 'LOADCOMMENTS': loadCommentsFunction();
+      break;
     case 'CHECKSESSION': checkSessionFunction();
       break;
 		case 'UPDATEGENRE': updateGenreFunction();
@@ -67,6 +69,19 @@
     else{
       header('HTTP/1.1 500 ' . $result['status']);
       die($result['status']);
+    }
+  }
+
+  function loadCommentsFunction(){
+    $movie = $_POST["movieTitle"];
+    $result = attemptLoadComments($movie);
+
+    if($result){
+      echo json_encode($result);
+    }
+    else{
+      header('HTTP/1.1 500 ' . "Could not retrieve Comments.");
+      die("Errorzinho Du Nacimento.");
     }
   }
 
