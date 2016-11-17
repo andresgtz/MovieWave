@@ -19,6 +19,8 @@
 			break;
 		case 'GETRESULTGENRE' : getResultGenre();
 			break;
+    case 'GETRESULTSEARCH' : getResultSearch();
+      break;  
 		case 'LOGOUT': logoutFunction();
 		default:
 			break;
@@ -77,6 +79,19 @@
       die('ERROR RETRIEVING MOVIES.');
     } else{
       echo json_encode($result);
+    }
+
+
+  }
+
+  function getResultSearch(){
+    $title = $_POST["title"];
+
+    $result = attemptGetMovieSearch($title);
+    if($result == 1){
+      echo json_encode(1);
+    } else {
+      echo json_encode(0);
     }
 
 

@@ -44,7 +44,6 @@
 			while($row=mysqli_fetch_array($result)){
 				array_push($arr,$row[0]);
 			}
-			error_log(print_r($arr,true));
 			return $arr;
 		}else{
 			$conn -> close();
@@ -52,6 +51,24 @@
 		}
 
 	}
+
+	function attemptGetMovieSearch($title){
+		$conn = connectionToDataBase();
+
+		if($conn != null){
+			$sql = "SELECT movieName FROM movies WHERE movieName = '$title'";
+			$result = $conn->query($sql);
+			if($result -> num_rows > 0){
+				return 1;
+			}else{
+				return 0;			}
+		}else{
+			$conn -> close();
+			return array('status' => 'CONNECTION WITH DB WENT WRONG');
+		}
+
+	}
+
 
 	//attemptLogin
 	function attemptLogin($userName, $password){
