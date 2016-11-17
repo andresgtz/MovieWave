@@ -139,8 +139,8 @@
 
       <div class="container">
         <div class="well">
-          <div class="resultDiv">
-            <h1 id="resultHeader"><?php echo $_GET["genre"]?></h1></h1>
+          <div id="resultDiv" class="row">
+            <h1 id="resultHeader"><?php echo $_GET["genre"]?></h1>
 
           </div>
         </div>
