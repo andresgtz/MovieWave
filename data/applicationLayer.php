@@ -21,6 +21,8 @@
 			break;
     case 'GETRESULTSEARCH' : getResultSearch();
       break;  
+		case 'GETMOVIEINFO' : getMovieInfo();
+			break;
 		case 'LOGOUT': logoutFunction();
 		default:
 			break;
@@ -128,6 +130,13 @@
 		$result = attemptUpdateGenre();
 		//error_log(print_r($result,true));
 		//error_log(print_r($result,true));
+		echo json_encode($result);
+	}
+
+	function getMovieInfo(){
+		$title = $_POST["movieTitle"];
+		$result = attemptGetMovieInfo($title);
+
 		echo json_encode($result);
 	}
 

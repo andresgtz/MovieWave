@@ -172,4 +172,32 @@
 		}
 	}
 
+	//attemptGetMovieInfo
+	function attemptGetMovieInfo($title){
+		$conn = connectionToDataBase();
+
+		if($conn != null){
+			$sql = "SELECT * FROM movies WHERE movieName = '$title'";
+			$result = $conn->query($sql);
+
+			$arr = array();
+
+			while($row = mysqli_fetch_array($result)){
+				$id = $row[0];
+			 	$arr =$row;
+			}
+
+			$sql = "SELECT AVG(rate) FROM comments WHERE id = '$id'";
+			//$sql = "SELECT AVG(id) FROM movies";
+			$result = $conn->query($sql);
+			$row = mysqli_fetch_array($result);
+			array_push($arr,$row[0]);
+
+			return $arr;
+		}else{
+			$conn -> close();
+			return array('status' => 'CONNECTION WITH DB WENT WRONG');
+		}
+	}
+
  ?>

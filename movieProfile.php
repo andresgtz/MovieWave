@@ -11,6 +11,8 @@
       <script type="text/javascript" src="js/login.js"> </script>
       <script type="text/javascript" src="js/checkSession.js"> </script>
       <script type="text/javascript" src="js/logout.js"> </script>
+      <script type="text/javascript" src="js/movieProfile.js"> </script>
+      <script type="text/javascript" src="js/movieComment.js"> </script>
 
    </head>
    <body>
@@ -156,7 +158,7 @@
 
          <div class="container">
             <div class="well">
-               <div class="row allAboutMe">
+               <div class="row movieHeader">
                   <div class="profilesHeader col-md-3">
                      <h1 id="h1movieTitle"><?php echo $_GET["movieTitle"]?></h1>
                      <img height="180" width="180" src="images/movie.jpeg"/>
@@ -164,15 +166,22 @@
                   <div class="col-md-3 divMovieInfo">
                       <label>Movie Title:</label>
                       <p id="movieTitle"></p>
+                      <label>Movie Id:</label>
+                      <p id="movieId"></p>
                       <label>Year:</label>
                       <p id="movieYear"></p>
                       <label>Genre:</label>
                       <p id="movieGenre"></p>
                       <label>Actors:</label>
                       <p id="movieActors"></p>
-                      <label>Rating:</label>
-                      <p id="movieRating"></p>
                   </div>
+                  <div class="col-md-3 divMovieInfo">
+                    <label>Description:</label>
+                    <p id="movieDescription"></p>
+                    <label>Rating:</label>
+                    <p id="movieRating"></p>
+                  </div>
+
                </div>
                <br></br>
                <div class="row commentSection">
