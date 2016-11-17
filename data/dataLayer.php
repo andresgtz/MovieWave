@@ -289,7 +289,9 @@
 		if($conn != null){
 			$sql = "SELECT movies.movieName
 							FROM movies,comments where movies.id = comments.movie_id
+							GROUP BY comments.movie_id
 							ORDER BY AVG(comments.rate) DESC LIMIT 5";
+;
 			$result = $conn->query($sql);
 			$arr = array();
 			while($row=mysqli_fetch_array($result)){
