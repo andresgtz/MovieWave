@@ -122,7 +122,7 @@
 			$result = $conn->query($sql);
 			$arr = array();
 			while($row=mysqli_fetch_array($result)){
-				error_log(print_r($row[0],true));
+				//error_log(print_r($row[0],true));
 				array_push($arr,$row[0]);
 
 			}
