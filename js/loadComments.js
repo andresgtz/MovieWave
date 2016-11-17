@@ -1,10 +1,10 @@
-$(document).ready(function(){  
+$(document).ready(function(){
   var jsonObject = {
       "action" : "LOADCOMMENTS",
       "movieTitle" : $('#h1movieTitle').text()
 
   };
-  
+
   $.ajax({
       type: "POST",
       url: "data/applicationLayer.php",
@@ -13,7 +13,7 @@ $(document).ready(function(){
       contentType: "application/x-www-form-urlencoded",
       success: function(jsonData) {
         for (var i=0; i<jsonData.length; i++) {
-          $('#comments').append("<div><label>User:</label><p>"+jsonData[i]['username']+"</p><label>Rating:</label><p>"+jsonData[i]['rate']+"</p><label>Comment:</label><p>"+ jsonData[i]['content']+"</p>")
+          $('#userComments').append("<div><strong>User: &nbsp;</strong>"+jsonData[i]['username']+"&nbsp;<strong> Rating:</strong>"+jsonData[i]['rate']+"<br><strong>Comment:</strong><p>"+ jsonData[i]['content']+"</p>")
         }
       },
       error: function(errorMsg) {

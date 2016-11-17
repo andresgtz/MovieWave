@@ -208,7 +208,7 @@
                       <h5>Please login to comment.</h5>
                   </div>
                   <div id="userComments">
-
+                    <br></br>
                   </div>
                </div>
             </div>
