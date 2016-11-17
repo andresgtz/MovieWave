@@ -13,7 +13,8 @@
       <script type="text/javascript" src="js/logout.js"> </script>
       <script type="text/javascript" src="js/movieProfile.js"> </script>
       <script type="text/javascript" src="js/addComment.js"> </script>
-
+      <script type="text/javascript" src="js/movieComment.js"> </script>
+      <script type="text/javascript" src="js/resultSearch.js"> </script>
    </head>
    <body>
       <div class="genres">
@@ -84,7 +85,7 @@
                               </div>
                               <div class="modal-footer">
                                  <a href="#" data-dismiss="modal" class="btn">Close</a>
-                                 <a href="#" class="btn btn-primary">Log-in</a>
+                                 <a id="loginButton" href="#" class="btn btn-primary">Log-in</a>
                               </div>
                            </div>
                            <div class="tab-pane" id="tab2">
@@ -180,6 +181,7 @@
                     <p id="movieDescription"></p>
                     <label>Rating:</label>
                     <p id="movieRating"></p>
+                    <button class="btn btn-info" type="submit" id="addFavorite">Add to favorites!</button>
                   </div>
 
                </div>

@@ -24,6 +24,7 @@ $(document).ready(function(){
             $("#loginLink").hide();
             $("#comments").show();
             $("#noLoginMsg").hide();
+            $("#addFavorite").show();
           }
           else {
             $("#addMovieli").hide();
@@ -32,6 +33,7 @@ $(document).ready(function(){
             $("#loginLink").show();
             $("#comments").hide();
             $("#noLoginMsg").show();
+            $("#addFavorite").hide();
           }
 
       },

@@ -22,8 +22,13 @@
 		case 'GETRESULTGENRE' : getResultGenre();
 			break;
     case 'GETRESULTSEARCH' : getResultSearch();
-      break;  
+      break;
 		case 'GETMOVIEINFO' : getMovieInfo();
+			break;
+		case 'LOADABOUTME': loadAboutMeFunction();
+			break;
+		case 'ADDMOVIE': addMovieFunction();
+		break;
 			break;
 		case 'LOGOUT': logoutFunction();
 		default:
@@ -78,7 +83,7 @@
     }
   }
 
-  function aboutMeFunction(){
+	function aboutMeFunction(){
     session_start();
     $userName = $_SESSION["username"];
     $aboutMe = $_POST["aboutMe"];
@@ -92,6 +97,18 @@
     }
   }
 
+  function loadAboutMeFunction(){
+    session_start();
+    $userName = $_SESSION["username"];
+    $result = attemptLoadAboutMe($userName);
+
+    if($result['status'] == 'SUCCESS'){
+      echo json_encode(array('user' => $result['user'], 'about' => $result['about']));
+    }else{
+      header('HTTP/1.1 421 '. $result['status']);
+      die($result['status']);
+    }
+  }
   function getResultGenre(){
     $genre = $_POST["genre"];
 

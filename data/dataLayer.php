@@ -140,6 +140,26 @@
 		}
 	}
 
+	function attemptLoadAboutMe($userName){
+		$conn = connectionToDataBase();
+
+		if($conn != null){
+			$sql = "SELECT username, aboutme FROM users WHERE username = '$userName'";
+			$result = $conn->query($sql);
+
+			if($resultado=$result->fetch_row()){
+				$conn->close();
+				return array('status' => 'SUCCESS','user' => $resultado[0], 'about' => $resultado[1]);
+			}else{
+				$conn->close();
+				return array('status'=>'LOAD UNSUCCESFUL');
+			}
+		}else{
+			$conn -> close();
+			return array('status' => 'CONNECTION WITH DB WENT WRONG');
+		}
+	}
+
 	//attemptAddMovie
 	function attemptAddMovie($movieTitle,$movieYear,$movieActors,$movieGenre,$movieDescription){
 		$conn =connectionToDataBase();
