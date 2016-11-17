@@ -36,14 +36,15 @@
 
 	function attemptGetMoviesByGenre($genre){
 		$conn = connectionToDataBase();
-		
+
 		if($conn != null){
-			$sql = "SELECT movieName, movieYear FROM movies WHERE genre = 'genre'";
+			$sql = "SELECT movieName, movieYear FROM movies WHERE genre = '$genre'";
 			$result = $conn->query($sql);
 			$arr = array();
 			while($row=mysqli_fetch_array($result)){
 				array_push($arr,$row[0]);
 			}
+			error_log(print_r($arr,true));
 			return $arr;
 		}else{
 			$conn -> close();

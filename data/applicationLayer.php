@@ -111,7 +111,7 @@
 
 	function updateGenreFunction(){
 		$result = attemptUpdateGenre();
-		error_log(print_r($result,true));
+		//error_log(print_r($result,true));
 		//error_log(print_r($result,true));
 		echo json_encode($result);
 	}
