@@ -34,6 +34,26 @@
 
 	}
 
+	function attemptAddComment($userName, $comment, $rating, $movie){
+		$conn = connectionToDataBase();
+
+		if($conn != null){
+				$sql = "SELECT id FROM movies WHERE movieName = '$movie'";
+				$result = $conn->query($sql);
+				$row=mysqli_fetch_array($result);
+				$movieId = $row[0];
+				$sql = "INSERT INTO comments (rate, content, username, movie_id) VALUES ('$rating', '$comment', '$userName', '$movieId')";
+
+				if (mysqli_query($conn, $sql)){
+					$conn -> close();
+					return array('status' => 'SUCCESS' );
+				}else{
+					$conn -> close();
+					return array('status' => 'COULD NOT ADD COMMENT.' );
+				}
+		}
+	}
+
 	function attemptGetMoviesByGenre($genre){
 		$conn = connectionToDataBase();
 
