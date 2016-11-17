@@ -25,5 +25,29 @@ $(document).ready(function(){
           alert("Error in movie page.");
       }
   });
+  $("#addFavorite").on("click", function(e) {
+    e.preventDefault();
+
+    var jsonObject = {
+        "action" : "ADDFAVORITE",
+        "movieId" : $("#movieId").text()
+    };
+
+    $.ajax({
+        type: "POST",
+        url: "data/applicationLayer.php",
+        data: jsonObject,
+        dataType: "json",
+        contentType: "application/x-www-form-urlencoded",
+        success: function(jsonData) {
+          alert("Added to favorite");
+        },
+        error: function(errorMsg) {
+            //alert(errorMsg.statusText);
+            alert("Error in add favorite.");
+        }
+    });
+
+  });
 
 });

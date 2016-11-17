@@ -26,7 +26,8 @@
 		case 'LOADABOUTME': loadAboutMeFunction();
 			break;
 		case 'ADDMOVIE': addMovieFunction();
-		break;
+			break;
+		case 'ADDFAVORITE' : addFavoriteFunction();
 			break;
 		case 'LOGOUT': logoutFunction();
 		default:
@@ -154,6 +155,15 @@
 		$title = $_POST["movieTitle"];
 		$result = attemptGetMovieInfo($title);
 
+		echo json_encode($result);
+	}
+
+	function addFavoriteFunction(){
+		session_start();
+		$username = $_SESSION["username"];
+		$movieId = $_POST["movieId"];
+
+		$result = tryAddFavorite($username,$movieId);
 		echo json_encode($result);
 	}
 

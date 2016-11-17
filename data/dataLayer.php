@@ -220,4 +220,31 @@
 		}
 	}
 
+	//try add favorite
+	function tryAddFavorite($username,$movieId){
+		$conn = connectionToDataBase();
+		if($conn != null){
+			$sql = "SELECT id FROM favorites WHERE movie_id  = '$movieId'";
+			$result = $conn->query($sql);
+
+			if($result->num_rows > 0){
+				$conn -> close();
+				return array('status' => 'Movie already in favorites.' );
+
+			}
+
+			else{
+				$sql = "INSERT INTO favorites (movie_id, username) VALUES ('$movieId', '$username')";
+
+				if (mysqli_query($conn, $sql)){
+					$conn -> close();
+					return array('status' => 'SUCCESS' );
+				}else{
+					$conn -> close();
+					return array('status' => 'COULD NOT REGISTER USER.' );
+				}
+			}
+		}
+	}
+
  ?>
