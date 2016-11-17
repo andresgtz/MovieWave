@@ -1,6 +1,7 @@
 $(document).ready(function(){
   var jsonObject = {
-      "action" : "UPDATEGENRE"
+      "action" : "GETRESULT",
+      "genre" : $("#resultHeader").text()
   };
 
   $.ajax({
@@ -11,14 +12,12 @@ $(document).ready(function(){
       contentType: "application/x-www-form-urlencoded",
       success: function(jsonData) {
           //alert(jsonData);
-          for(var i=0; i < jsonData.length; i++){
-            $("#genreList").append("<li><a href=\"result.php?genre="+jsonData[i]+"\">"+jsonData[i]+"</a></li>");
-          }
+
 
       },
       error: function(errorMsg) {
           //alert(errorMsg.statusText);
-          alert("Error in update genre.");
+          alert("Error in result page.");
       }
   });
 

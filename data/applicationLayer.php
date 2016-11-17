@@ -17,6 +17,8 @@
       break;
 		case 'UPDATEGENRE': updateGenreFunction();
 			break;
+		case 'GETRESULT' : getResult();
+			break;
 		case 'LOGOUT': logoutFunction();
 		default:
 			break;
