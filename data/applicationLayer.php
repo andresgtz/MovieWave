@@ -13,6 +13,8 @@
       break;
     case 'ADDMOVIE': addMovieFunction();
       break;
+    case 'ADDCOMMENT': addCommentFunction();
+      break;
     case 'CHECKSESSION': checkSessionFunction();
       break;
 		case 'UPDATEGENRE': updateGenreFunction();
@@ -43,6 +45,24 @@
 			die($result['status']);
 		}
 	}
+
+  function addCommentFunction(){
+    session_start();
+    $userName = $_SESSION["username"];
+    $comment = $_POST["comment"];
+    $rating = $_POST["rating"];
+    $movie = $_POST["movieTitle"];
+
+    $result = attemptAddComment($userName, $comment, $rating, $movie);
+
+    if($result['status'] == 'SUCCESS'){
+      echo json_encode(array('message' => 'Registration successful' ));
+    }
+    else{
+      header('HTTP/1.1 500 ' . $result['status']);
+      die($result['status']);
+    }
+  }
 
   function loginFunction(){
     $userName = $_POST["loginUsername"];

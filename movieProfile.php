@@ -12,7 +12,7 @@
       <script type="text/javascript" src="js/checkSession.js"> </script>
       <script type="text/javascript" src="js/logout.js"> </script>
       <script type="text/javascript" src="js/movieProfile.js"> </script>
-      <script type="text/javascript" src="js/movieComment.js"> </script>
+      <script type="text/javascript" src="js/addComment.js"> </script>
 
    </head>
    <body>
@@ -188,16 +188,16 @@
                  <h3>Comments</h3>
                   <div id="comments">
                       <form accept-charset="UTF-8" action="" method="POST">
-                         <textarea class="form-control" id="text" name="text" placeholder="Type in your message" rows="5"></textarea>
+                         <textarea class="form-control" id="commentText" name="text" placeholder="Type in your message" rows="5"></textarea>
                          <label>Rating: </label>
-                         <select name="ratingSelect">
+                         <select id="ratingValue" name="ratingSelect">
                            <option>1</option>
                            <option>2</option>
                            <option>3</option>
                            <option>4</option>
                            <option>5</option>
                          </select><br>
-                         <button class="btn btn-info" type="submit">Comment!</button>
+                         <button id="submitComment" class="btn btn-info" type="submit">Comment!</button>
                       </form>
                   </div>
                   <div id="noLoginMsg">
