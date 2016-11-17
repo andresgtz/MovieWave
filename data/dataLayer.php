@@ -38,7 +38,7 @@
 		$conn = connectionToDataBase();
 		
 		if($conn != null){
-			$sql = "SELECT movieName, movieYear FROM movies WHERE genre = 'genre'";
+			$sql = "SELECT movieName, movieYear FROM movies WHERE genre = '$genre'";
 			$result = $conn->query($sql);
 			$arr = array();
 			while($row=mysqli_fetch_array($result)){
