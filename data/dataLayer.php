@@ -267,4 +267,40 @@
 		}
 	}
 
+	function tryGetFavorites($username){
+		$conn = connectionToDataBase();
+		if($conn != null){
+			$sql = "SELECT movies.movieName FROM movies,favorites where movies.id = favorites.movie_id and favorites.username = '$username' LIMIT 5";
+			$result = $conn->query($sql);
+			$arr = array();
+			while($row=mysqli_fetch_array($result)){
+				//error_log(print_r($row[0],true));
+				array_push($arr,$row[0]);
+			}
+			return $arr;
+		}else{
+			$conn -> close();
+			return array('status' => 'ERROR');
+		}
+	}
+
+	function tryGetTopMovies(){
+		$conn = connectionToDataBase();
+		if($conn != null){
+			$sql = "SELECT movies.movieName
+							FROM movies,comments where movies.id = comments.movie_id
+							ORDER BY AVG(comments.rate) DESC LIMIT 5";
+			$result = $conn->query($sql);
+			$arr = array();
+			while($row=mysqli_fetch_array($result)){
+				//error_log(print_r($row[0],true));
+				array_push($arr,$row[0]);
+			}
+			error_log(print_r($sql,true));
+			return $arr;
+		}else{
+			$conn -> close();
+			return array('status' => 'ERROR');
+		}
+	}
  ?>

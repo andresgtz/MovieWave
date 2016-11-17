@@ -31,6 +31,10 @@
 			break;
 		case 'ADDFAVORITE' : addFavoriteFunction();
 			break;
+		case 'GETFAVORITES': getFavoritesFunction();
+			break;
+		case 'GETTOP' : getTopMoviesFunction();
+			break;
 		case 'LOGOUT': logoutFunction();
 		default:
 			break;
@@ -184,6 +188,21 @@
 		$movieId = $_POST["movieId"];
 
 		$result = tryAddFavorite($username,$movieId);
+		echo json_encode($result);
+	}
+
+	function getFavoritesFunction(){
+		session_start();
+		$username = $_SESSION["username"];
+
+		$result = tryGetFavorites($username);
+
+		echo json_encode($result);
+	}
+
+	function getTopMoviesFunction(){
+		$result = tryGetTopMovies();
+
 		echo json_encode($result);
 	}
 
